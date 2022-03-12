@@ -41,7 +41,6 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 header li{
@@ -58,21 +57,24 @@ main{
 
 .left-text{
     flex-grow: 2;
+    flex-basis: 66%;
     margin: auto;
 }
 
 .right-image{
     flex-grow: 1;
+    flex-shrink: 5;
+    flex-basis: 33%;
     margin: auto;
 }
 
 .icon{
-    height: 350px;
+    height: 33vw;
+    max-height: 350px;
     width: auto;
     border: 5px dotted var(--darkblue-border);
     border-radius: 50%;
     padding: 2px;
-    opacity: 100%;
 }
 
 #short{
@@ -86,11 +88,11 @@ h1{
 }
 
 h2{
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 600;
 }
 h3{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -116,7 +118,6 @@ h3{
 
 .name{
     color: var(--darkblue-border);
-    font-size: 3.5rem;
 }
 
 #center{
@@ -140,4 +141,16 @@ h3{
      50% { transform: rotate(10.0deg) }
      60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
     100% { transform: rotate( 0.0deg) }
+}
+
+@media screen and (max-width:768px){
+    .container{
+        flex-direction: column;
+    }
+    .icon{
+        height: 50vw;
+        max-height: 350px;
+        min-height: 250px;
+        margin-top: 20px;
+    }
 }
