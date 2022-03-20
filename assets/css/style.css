@@ -245,6 +245,7 @@ footer{
 .contact-logos{
     justify-content: space-around;
     width: var(--max-size);
+    flex-wrap: wrap;
 }
 .contact-logos a img{
     height: 5em;
