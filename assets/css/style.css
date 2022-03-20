@@ -1,3 +1,4 @@
+/* added colours and other variables used across the css to root element */
 :root{
     --background-color: #fff6f0;
     --black-text: #000000;
@@ -5,21 +6,27 @@
     --darkblue-border-faded: rgb(22, 87, 129,0.5);
     --another-blue: #b5e1e9;
     --gradient-orange: #e4b3f3;
+    --heading-weight: 600;
+    --smooth-transition: all 0.5s ease-in-out;
+    --max-size: 100%;
 }
 
+/* all element selector for global style definition */
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Style for html element */
 html{
     border: 5px solid var(--darkblue-border-faded);
     scroll-behavior: smooth;
 }
 
+/* overall body element style definition */
 body{
-    width: 100%;
+    width: var(--max-size);
     height: auto;
     min-height: 100vh;
     max-width: 1140px;
@@ -33,83 +40,80 @@ body{
     flex-direction: column;
 }
 
+/* Header section style */
 header{
     margin: 10px auto;
-    width: 100%;
-    max-width: 1140px;
+    width: var(--max-size);
 }
-footer{
-    color: var(--darkblue-border);
-}
-
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-#contact-logos.container a img{
-    height: 5em;
-    filter: grayscale(100%);
-}
-#contact-logos.container a img:hover{
-    transform: scale(1.1,1.1);
-    filter: grayscale(0%);
-    transition: all 0.5s ease-in-out;
-}
-#contact-logos{
-    width: 100%;
-}
-#contact-logos.container{
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-.container-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container-heading{
-    background-image: linear-gradient(120deg, var(--gradient-orange),var(--another-blue) 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 80%;
-    transition: background-size 0.25s ease-in;
-    margin-bottom: 2vh;
-}
-
-.container-heading:hover {
-    background-size: 100% 88% !important;
-}
-
-
+/* header link style definition */
 header li{
     list-style-type: none;
     display: inline-block;
 }
 
+/* website logo style */
+#short{
+    border: 5px solid var(--darkblue-border);
+    text-decoration: none;
+    color: var(--black-text);
+    padding: 10px 6px;
+    transition: var(--smooth-transition);
+}
+/* Website logo and resume button on hover style */
+#short:hover,
+#resume:hover{
+    background-color: var(--darkblue-border);
+    color: var(--background-color);
+    text-decoration: none;
+    transition: var(--smooth-transition);
+}
+
+/* Navigation bar link style */
+.nav-link{
+    text-decoration: none;
+    color: var(--black-text);
+    font-size: 1.5rem;
+    margin: 0 1.8vw;
+    font-weight: 500;
+}
+.nav-link:hover{
+    color: var(--darkblue-border);
+    text-decoration: underline;
+    transition: all 0.2s linear;
+}
+/* resume link style */
+#resume{
+    color: var(--darkblue-border);
+    border: 4px solid var(--darkblue-border);
+    border-radius: 15px;
+    padding: 0 0.3vw;
+}
+
+/* Main section style definition containing main content */
 main{
     display: flex;
     flex-direction: column;
-    margin: 10vh auto;
-    width: 100%;
+    margin: 10vh auto 2vh auto;
+    width: var(--max-size);
 }
 
+/* Intro section box style */
+.container,
+.contact-logos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left and right box in intro section flex style */
 .left-text{
-    flex-grow: 2;
-    flex-basis: 66%;
-    margin: auto;
+    flex: 2 1 65%;
 }
-
 .right-image{
-    flex-grow: 1;
-    flex-shrink: 5;
-    flex-basis: 33%;
-    margin: auto;
+    flex: 1 5 35%;
 }
-
+/* Display picture style */
 .icon{
     height: 33vw;
     max-height: 350px;
@@ -119,158 +123,141 @@ main{
     padding: 2px;
 }
 
-.projects{
+/* Class selector for all parent containers (About me, projects and contact) */
+.content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-heading,
+#text-link{
+    background-image: linear-gradient(120deg, var(--gradient-orange),var(--another-blue) var(--max-size));
+    background-repeat: no-repeat;
+    background-size: var(--max-size) 0.2em;
+    background-position: 0 80%;
+    transition: background-size 0.25s ease-in;
+    margin-bottom: 2vh;
+}
+.container-heading:hover,
+#text-link:hover{
+    background-size: var(--max-size) 88% !important;
+}
+
+/* Projects section element style */
+.projects,
+.small-projects{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: var(--max-size);
+    height: var(--max-size);
 }
-
-.projects a{
+.projects a,
+#text-link{
     color: var(--black-text);
     text-decoration: none;
 }
-
+/* Main project section style */
 #main-project{
     flex: 1 1 55%;
 }
-
+/* small projects section style */
 .small-projects{
-    height: 100%;
+    height: var(--max-size);
     width: auto;
     flex: 1 1 45%;
     margin-left: 2%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     flex-wrap: wrap;
 }
 .small-projects figure{
     margin: 3% auto;
     flex: 1 1 50%;
 }
+/* Main and Small project section figure caption and image style */
+/* On figure hover scale up figure caption */
 #main-project:hover figcaption,
 .small-projects figure:hover figcaption{
     transform: scale(1.1,1.1);
     color: var(--darkblue-border);
-    transition: all 0.5s linear;
+    transition: var(--smooth-transition);
 }
-
 #main-project figcaption,
 .small-projects figure figcaption{
+    font-size: 1.3rem;
     margin: 3% auto 0 auto;
 }
-
 #main-project img,
 .small-projects img{
-    width: 100%;
+    width: var(--max-size);
     height: auto;
     box-shadow: 0 0 15px 1px gray;
-    transition: all 0.5s linear;
+    transition: var(--smooth-transition);
 }
-
+/* Image on hover add shadow */
 #main-project img:hover,
 .small-projects img:hover{
     box-shadow: 0 0 30px 5px var(--darkblue-border);
     transform: scale(1.02,1.02);
-    transition: all 0.5s linear;
+    transition: var(--smooth-transition);
 }
 
-#short{
-    border: 5px solid var(--darkblue-border);
-    text-decoration: none;
-    color: var(--black-text);
-    padding: 10px 6px;
-    transition: all 0.5s ease-in-out;
+/* Text elements style declaration */
+h1,h2,h3{
+    font-weight: var(--heading-weight);
 }
-#short:hover{
-    background-color: var(--darkblue-border);
-    color: var(--background-color);
-    transition: all 0.5s ease-in-out;
-}
-
 h1{
     font-size: 3.8rem;
-    font-weight: 600;
 }
-
 h2{
     font-size: 3rem;
-    font-weight: 600;
 }
 h3{
     font-size: 2rem;
-    font-weight: 600;
 }
 p{
     font-size: 1.6rem;
     font-weight: 400;
 }
-
+#center,
 #subheading{
     text-align: center;
+}
+#subheading{
     margin-left: 30px;
 }
 
-#text-link{
-    color: var(--black-text);
-    text-decoration: none;
-    background-image: linear-gradient(120deg, var(--gradient-orange),var(--another-blue) 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 90%;
-    transition: background-size 0.25s ease-in;
-    margin-bottom: 2vh;
-}
-#text-link:hover{
-    background-size: 100% 88% !important;
-}
-
-.nav-link{
-    text-decoration: none;
-    color: var(--black-text);
-    font-size: 1.5rem;
-    margin: 0 1.8vw;
-    font-weight: 500;
-}
-
-.nav-link:hover{
-    color: var(--darkblue-border);
-    text-decoration: underline;
-    transition: all 0.2s linear;
-}
-
-#resume{
-    color: var(--darkblue-border);
-    border: 4px solid var(--darkblue-border);
-    border-radius: 15px;
-    padding: 0 0.3vw;
-}
-#resume:hover{
-    color: var(--background-color);
-    background-color: var(--darkblue-border);
-    text-decoration: none;
-    transition: all 0.2s linear;
-}
-
-.name{
+/* changing colour of Name and footer */
+.name,
+footer{
     color: var(--darkblue-border);
 }
 
+/* Break line style between each section */
 .break{
     margin: 5vh auto 2vh auto;
-    width: 100%;
+    width: var(--max-size);
     border: 2px solid var(--darkblue-border);
     border-radius: 10px;
 }
 
-#center{
-    text-align: center;
+/* Contact us logo section element style */
+.contact-logos{
+    justify-content: space-around;
+    width: var(--max-size);
+}
+.contact-logos a img{
+    height: 5em;
+    filter: grayscale(var(--max-size));
+    transition: all 0.2s ease-in-out;
+}
+.contact-logos a img:hover{
+    transform: scale(1.1,1.1);
+    filter: grayscale(0%);
+    transition: var(--smooth-transition);
 }
 
+/* Wave hover animation */
 #wave:hover {
     animation-name: wave-animation;
     animation-duration: 2.5s;
@@ -279,13 +266,15 @@ p{
     display: inline-block;
 }
 
+/* Heart hover animation */
 #heart:hover {
     animation-name: heart-animation;
     animation-duration: 2.5s;
     animation-iteration-count: infinite;
     display: inline-block;
 }
-  
+
+/* Keyframes for wave emoji animation */
 @keyframes wave-animation {
       0% { transform: rotate( 0.0deg) }
      10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
@@ -296,13 +285,14 @@ p{
      60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
     100% { transform: rotate( 0.0deg) }
 }
-
+/* Keyframes for heart expansion animation */
 @keyframes heart-animation {
     0% {transform: scale(1,1)}
     90% {transform: scale(1.6,1.6)}
     100% {transform: scale(1,1)}
 }
 
+/* Media section to re-style elements at tablet width */
 @media screen and (max-width:768px){
     .container{
         flex-direction: column;
@@ -322,29 +312,25 @@ p{
         order: 1;
     }
     main{
-        margin: 5vh auto;
+        margin: 5vh auto 2vh auto;
     }
-
     .projects{
         flex-direction: column;
     }
-
     #main-project,
     .small-projects{
         flex: 1 1 100%;
         margin-left: 0;
     }
-
     .small-projects{
         margin-top: 1.3vw;
     }
-
     .nav-link{
         margin: 0 1.1vw;
     }
-    
 }
 
+/* Media section to re-style elements at mobile width */
 @media screen and (max-width:480px){
     ul{
         display: flex;
@@ -356,11 +342,8 @@ p{
     }
     .icon{
         height: 70vw;
-        max-height: 350px;
         min-height: 100px;
-        margin-bottom: 30px;
     }
-
     .small-projects{
         flex-direction: column;
     }
