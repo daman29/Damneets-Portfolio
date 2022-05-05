@@ -10,6 +10,9 @@ Link above takes you to the webpage.
 
 ## Description
 
+- Latest CV added to the webpage
+- Updated projects section with new projects
+- Added phone icon and number to the contact section
 - Designed and developed a personal portfolio webpage
 - Personal information such as a recent photo, name, and links to sections about me, my work and contact details included.
 - Properly linked navigation links.
@@ -17,6 +20,7 @@ Link above takes you to the webpage.
 - All application links functioning and redirect in a new tab to the application.
 - Responsive CSS design with accessibility standards followed.
 - Semantic source code with ordered layout and comments.
+
 
 ## Damneet's Portfolio Overview
 Below is the screen capture of the webpage.
@@ -28,6 +32,5 @@ Below is the screen capture of the webpage.
 ## Bonus
 - Animation for emojis on hover (go on test it out).
 - Text highlight for important headings and links (check out the music from the about me section).
-- Added resume.
 - Added sweet animations for visually appealing content and capture the users attention.
-- All done without JS.
+- Added gif on hover for the main project
